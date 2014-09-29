@@ -1,9 +1,16 @@
+$color-yellow: #f1c40f;
+$order-button-gap: 15px;
+
 span, li, div, input {
   font-family: 'Open Sans', sans-serif;
 }
 
-p {
+p, button {
   font-family: 'Open Sans Condensed', sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 #map {
@@ -18,12 +25,12 @@ p {
   right: 100px;
   z-index: 999;
 
-  max-width: 1200px;
+  max-width: 980px;
   margin: auto;
 }
 
 .m-map-order {
-  background: #f1c40f;
+  background: $color-yellow;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.44);
   border-radius: 2px;
   padding: 20px;
@@ -53,6 +60,11 @@ p {
     font-size: 14px;
   }
 
+  fieldset {
+    padding: $order-button-gap 0;
+    border: 0;
+  }
+
   .m-map-order-date {
     margin-right: 90px;
   }
@@ -61,9 +73,49 @@ p {
     float: right;
     width: 80px;
   }
+
+  .m-map-order--submit {
+    display: block;
+    width: 100%;
+    border: none;
+    background: #2C3E50;
+    color: $color-yellow;
+    height: 45px;
+    border-radius: 4px;
+    font-size: 20px;
+  }
+}
+
+.m-map-order-sub-actions {
+  margin-top: $order-button-gap;
+
+  a {
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+    font-size: 13px;
+    opacity: 0.7;
+  }
 }
 
 .m-map-label {
-  margin: 100px 0 0 400px;
+  margin: 40px 0 0 400px;
   background: white;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.44);
+  padding: 40px;
+
+  p {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+
+  li {
+    margin-top: 10px;
+  }
+
+  .fa-circle-thin {
+    font-size: 0.8em;
+    padding-right: 10px;
+    vertical-align: middle;
+  }
 }
