@@ -9,21 +9,24 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="./css/scss/reset.css">
     <link rel="stylesheet" href="./css/scss/index.css">
+    <link rel="stylesheet" href="./css/scss/header.css">
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 
     <![endif]-->
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-    <script src="script.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="libs/blur.js"></script>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Open+Sans+Condensed:700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-    <header>
+    <header class="js-header">
+        <div class="m-header-raw"></div>
 
     </header>
+
     <div id="map">
         <div class="m-map">
             <div class="m-map-order">
@@ -54,6 +57,7 @@
         </div>
     </div>
     <script src="map.js"></script>
-
+    <script src="header.blur.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

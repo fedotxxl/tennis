@@ -1,5 +1,6 @@
 $color-yellow: #f1c40f;
 $order-button-gap: 15px;
+$header-height: 40px;
 
 span, li, div, input {
   font-family: 'Open Sans', sans-serif;
@@ -15,7 +16,18 @@ a {
 
 #map {
   height: 600px;
+  margin-top: -$header-height;
   position: relative;
+}
+
+header {
+  position: relative;
+  z-index: 999;
+  height: $header-height;
+}
+
+body {
+  background: red;
 }
 
 .m-map {
