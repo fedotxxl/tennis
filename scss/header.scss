@@ -8,7 +8,7 @@ header {
   z-index: 999;
   height: $header-height;
 
-  border-top: $header-border solid #F1C40F;
+  border-top: $header-border solid $color-yellow;
   background: url("/img/blader-bg.png");
 
   a {
