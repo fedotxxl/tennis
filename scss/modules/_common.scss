@@ -1,7 +1,11 @@
+%circle-large {
+  @include circle(62px, $color-grey);
+}
+
 .img-circle-small {
   @include circle(23px, $color-grey)
 }
 
 .img-circle-large {
-  @include circle(62px, $color-grey);
+  @extend %circle-large;
 }
