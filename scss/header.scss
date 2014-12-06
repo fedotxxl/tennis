@@ -1,0 +1,73 @@
+@import "mixins/all";
+
+$header-border: 6px;
+$header-line-height: $header-height - $header-border;
+
+header {
+  position: relative;
+  z-index: 999;
+  height: $header-height;
+
+  border-top: $header-border solid #F1C40F;
+  background: url("/img/blader-bg.png");
+
+  a {
+    @include a-condensed-grey;
+  }
+}
+
+.m-header {
+  @include l-max-width;
+  position: relative;
+}
+
+.m-header-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  line-height: $header-line-height;
+
+  .m-header-left--call-us {
+    .img-circle-small {
+      margin-right: 10px;
+    }
+  }
+}
+
+.m-header-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  text-align: right;
+
+  line-height: $header-line-height;
+
+  .m-header-right--register {
+    position: absolute;
+    left: 50%;
+
+    a:first-child {
+      padding-right: 8px;
+      border-right: 1px solid $color-grey;
+    }
+
+    a:last-child {
+      padding-left: 8px;
+    }
+  }
+
+  .m-header-right--social {
+    float: right;
+  }
+}
+
+.m-header-logo-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: (-186px/2);
+}

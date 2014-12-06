@@ -1,0 +1,10 @@
+@mixin circle($dimension, $color) {
+  display: inline-block;
+  width: $dimension;
+  height: $dimension;
+  line-height: $dimension;
+  color: $color;
+  border: 1px solid $color;
+  border-radius: 50%;
+  text-align: center;
+}

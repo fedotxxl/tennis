@@ -1,0 +1,70 @@
+/* line 6, H:/job/projects-active/tennis/scss/header.scss */
+header {
+  position: relative;
+  z-index: 999;
+  height: 67px;
+  border-top: 6px solid #f1c40f;
+  background: url("/img/blader-bg.png");
+}
+/* line 14, H:/job/projects-active/tennis/scss/header.scss */
+header a {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #2c3e50;
+}
+
+/* line 19, H:/job/projects-active/tennis/scss/header.scss */
+.m-header {
+  max-width: 980px;
+  margin: auto;
+  position: relative;
+}
+
+/* line 24, H:/job/projects-active/tennis/scss/header.scss */
+.m-header-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  line-height: 61px;
+}
+/* line 33, H:/job/projects-active/tennis/scss/header.scss */
+.m-header-left .m-header-left--call-us .img-circle-small {
+  margin-right: 10px;
+}
+
+/* line 39, H:/job/projects-active/tennis/scss/header.scss */
+.m-header-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  text-align: right;
+  line-height: 61px;
+}
+/* line 49, H:/job/projects-active/tennis/scss/header.scss */
+.m-header-right .m-header-right--register {
+  position: absolute;
+  left: 50%;
+}
+/* line 53, H:/job/projects-active/tennis/scss/header.scss */
+.m-header-right .m-header-right--register a:first-child {
+  padding-right: 8px;
+  border-right: 1px solid #2c3e50;
+}
+/* line 58, H:/job/projects-active/tennis/scss/header.scss */
+.m-header-right .m-header-right--register a:last-child {
+  padding-left: 8px;
+}
+/* line 63, H:/job/projects-active/tennis/scss/header.scss */
+.m-header-right .m-header-right--social {
+  float: right;
+}
+
+/* line 68, H:/job/projects-active/tennis/scss/header.scss */
+.m-header-logo-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -93px;
+}
