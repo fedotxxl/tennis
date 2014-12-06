@@ -1,0 +1,35 @@
+/* line 1, H:/job/projects-active/tennis/scss/modules/_reset.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 5, H:/job/projects-active/tennis/scss/modules/_reset.scss */
+span, li, div, input {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* line 9, H:/job/projects-active/tennis/scss/modules/_reset.scss */
+h1, h2, h3, h4, button {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* line 13, H:/job/projects-active/tennis/scss/modules/_reset.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 17, H:/job/projects-active/tennis/scss/modules/_reset.scss */
+body {
+  background: white;
+}
+
+/* line 21, H:/job/projects-active/tennis/scss/modules/_reset.scss */
+button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  outline: 0;
+  cursor: pointer;
+}

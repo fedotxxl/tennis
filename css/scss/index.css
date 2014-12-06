@@ -3,7 +3,7 @@
   display: inline-block;
   width: 62px;
   height: 62px;
-  line-height: 62px;
+  line-height: 60px;
   color: #2c3e50;
   border: 1px solid #2c3e50;
   border-radius: 50%;
@@ -15,41 +15,21 @@
   display: inline-block;
   width: 23px;
   height: 23px;
-  line-height: 23px;
+  line-height: 21px;
   color: #2c3e50;
   border: 1px solid #2c3e50;
   border-radius: 50%;
   text-align: center;
 }
 
-/* line 9, H:/job/projects-active/tennis/scss/index.scss */
-span, li, div, input {
-  font-family: 'Open Sans', sans-serif;
-}
-
-/* line 13, H:/job/projects-active/tennis/scss/index.scss */
-h1, h2, h3, h4, button {
-  font-family: 'Open Sans Condensed', sans-serif;
-}
-
-/* line 17, H:/job/projects-active/tennis/scss/index.scss */
-a {
-  text-decoration: none;
-}
-
-/* line 21, H:/job/projects-active/tennis/scss/index.scss */
+/* line 8, H:/job/projects-active/tennis/scss/index.scss */
 #map {
   height: 600px;
   margin-top: -67px;
   position: relative;
 }
 
-/* line 27, H:/job/projects-active/tennis/scss/index.scss */
-body {
-  background: white;
-}
-
-/* line 31, H:/job/projects-active/tennis/scss/index.scss */
+/* line 14, H:/job/projects-active/tennis/scss/index.scss */
 .m-map {
   max-width: 980px;
   margin: auto;
@@ -60,7 +40,7 @@ body {
   z-index: 999;
 }
 
-/* line 41, H:/job/projects-active/tennis/scss/index.scss */
+/* line 24, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-order {
   background: #f1c40f;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.44);
@@ -69,7 +49,7 @@ body {
   float: left;
   width: 300px;
 }
-/* line 50, H:/job/projects-active/tennis/scss/index.scss */
+/* line 33, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-order input {
   display: block;
   width: 100%;
@@ -81,30 +61,30 @@ body {
   border: 1px #b08d00 solid;
   box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.28);
 }
-/* line 63, H:/job/projects-active/tennis/scss/index.scss */
+/* line 46, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-order h3 {
   font-size: 25px;
 }
-/* line 67, H:/job/projects-active/tennis/scss/index.scss */
+/* line 50, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-order span {
   display: block;
   font-size: 14px;
 }
-/* line 72, H:/job/projects-active/tennis/scss/index.scss */
+/* line 55, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-order fieldset {
   padding: 15px 0;
   border: 0;
 }
-/* line 77, H:/job/projects-active/tennis/scss/index.scss */
+/* line 60, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-order .m-map-order-date {
   margin-right: 90px;
 }
-/* line 81, H:/job/projects-active/tennis/scss/index.scss */
+/* line 64, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-order .m-map-order--time {
   float: right;
   width: 80px;
 }
-/* line 86, H:/job/projects-active/tennis/scss/index.scss */
+/* line 69, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-order .m-map-order--submit {
   display: block;
   width: 100%;
@@ -116,11 +96,11 @@ body {
   font-size: 20px;
 }
 
-/* line 98, H:/job/projects-active/tennis/scss/index.scss */
+/* line 81, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-order-sub-actions {
   margin-top: 15px;
 }
-/* line 101, H:/job/projects-active/tennis/scss/index.scss */
+/* line 84, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-order-sub-actions a {
   display: block;
   text-align: right;
@@ -129,87 +109,87 @@ body {
   opacity: 0.7;
 }
 
-/* line 110, H:/job/projects-active/tennis/scss/index.scss */
+/* line 93, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-label {
   margin: 40px 0 0 400px;
   background: white;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.44);
   padding: 40px;
 }
-/* line 116, H:/job/projects-active/tennis/scss/index.scss */
+/* line 99, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-label h1 {
   font-size: 50px;
   margin-bottom: 20px;
 }
-/* line 121, H:/job/projects-active/tennis/scss/index.scss */
+/* line 104, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-label li {
   margin-top: 10px;
 }
-/* line 125, H:/job/projects-active/tennis/scss/index.scss */
+/* line 108, H:/job/projects-active/tennis/scss/index.scss */
 .m-map-label .fa-circle-thin {
   font-size: 0.8em;
   padding-right: 10px;
   vertical-align: middle;
 }
 
-/* line 132, H:/job/projects-active/tennis/scss/index.scss */
+/* line 115, H:/job/projects-active/tennis/scss/index.scss */
 .m-landing-callouts {
-  max-width: 980px;
-  margin: auto;
   overflow: hidden;
   *zoom: 1;
+  max-width: 980px;
+  margin: auto;
   margin: 70px auto;
 }
 
-/* line 139, H:/job/projects-active/tennis/scss/index.scss */
+/* line 122, H:/job/projects-active/tennis/scss/index.scss */
 .m-landing-callout {
   float: left;
   width: 50%;
   margin: 30px 0;
 }
-/* line 144, H:/job/projects-active/tennis/scss/index.scss */
+/* line 127, H:/job/projects-active/tennis/scss/index.scss */
 .m-landing-callout > .fa {
   color: #2C3E50;
   float: left;
   font-size: 30px;
 }
 
-/* line 153, H:/job/projects-active/tennis/scss/index.scss */
+/* line 136, H:/job/projects-active/tennis/scss/index.scss */
 .m-landing-callout-data {
   margin-left: 80px;
 }
-/* line 156, H:/job/projects-active/tennis/scss/index.scss */
+/* line 139, H:/job/projects-active/tennis/scss/index.scss */
 .m-landing-callout-data h3 {
   color: #393939;
   font-family: 'Open Sans';
   font-size: 30px;
   font-weight: 100;
 }
-/* line 163, H:/job/projects-active/tennis/scss/index.scss */
+/* line 146, H:/job/projects-active/tennis/scss/index.scss */
 .m-landing-callout-data h4 {
   color: #f1c40f;
   margin: 10px 0;
   font-family: 'Open Sans';
 }
-/* line 169, H:/job/projects-active/tennis/scss/index.scss */
+/* line 152, H:/job/projects-active/tennis/scss/index.scss */
 .m-landing-callout-data p {
   margin: 20px 0;
   font-weight: 100;
   line-height: 1.5em;
 }
 
-/* line 176, H:/job/projects-active/tennis/scss/index.scss */
+/* line 159, H:/job/projects-active/tennis/scss/index.scss */
 footer {
   background: #2c3e50;
   color: #9ba6b0;
   border-bottom: 3px solid #f1c40f;
 }
-/* line 181, H:/job/projects-active/tennis/scss/index.scss */
+/* line 164, H:/job/projects-active/tennis/scss/index.scss */
 footer a {
   color: #9ba6b0;
 }
 
-/* line 186, H:/job/projects-active/tennis/scss/index.scss */
+/* line 169, H:/job/projects-active/tennis/scss/index.scss */
 .m-footer {
   max-width: 980px;
   margin: auto;
@@ -217,21 +197,21 @@ footer a {
   font-size: 13px;
   padding: 40px 0;
 }
-/* line 193, H:/job/projects-active/tennis/scss/index.scss */
+/* line 176, H:/job/projects-active/tennis/scss/index.scss */
 .m-footer .m-footer--copyright {
   padding-top: 20px;
 }
 
-/* line 199, H:/job/projects-active/tennis/scss/index.scss */
+/* line 182, H:/job/projects-active/tennis/scss/index.scss */
 .m-footer-social li {
   display: inline-block;
 }
-/* line 203, H:/job/projects-active/tennis/scss/index.scss */
+/* line 186, H:/job/projects-active/tennis/scss/index.scss */
 .m-footer-social .fa {
   display: inline-block;
   width: 30px;
   height: 30px;
-  line-height: 30px;
+  line-height: 28px;
   color: #9ba6b0;
   border: 1px solid #9ba6b0;
   border-radius: 50%;
@@ -242,7 +222,7 @@ footer a {
   transition: all 0.2s ease-out;
   margin: 0 2px;
 }
-/* line 209, H:/job/projects-active/tennis/scss/index.scss */
+/* line 192, H:/job/projects-active/tennis/scss/index.scss */
 .m-footer-social .fa:hover {
   color: #2c3e50;
   border: 1px solid #2c3e50;

@@ -5,26 +5,10 @@ $order-button-gap: 15px;
 $color-footer-text: #9BA6B0;
 $color-footer-background: #2C3E50;
 
-span, li, div, input {
-  font-family: 'Open Sans', sans-serif;
-}
-
-h1, h2, h3, h4, button {
-  font-family: 'Open Sans Condensed', sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
-
 #map {
   height: 600px;
   margin-top: -$header-height;
   position: relative;
-}
-
-body {
-  background: white;
 }
 
 .m-map {

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--http://themeforest.net/theme_previews/6860416-taksi-psd?index=1&url_name=taksi-psd-->
+    <meta charset="utf-8">
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./css/scss/common.css">
+    <link rel="stylesheet" href="./css/scss/list.css">
+    <link rel="stylesheet" href="./css/scss/header.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+    <![endif]-->
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="libs/blur.js"></script>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Open+Sans+Condensed:700,300&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+    <header class="js-header">
+        <div class="m-header">
+            <div class="m-header-left">
+                <div class="m-header-left--call-us">
+                    <p>
+                        <span class="img-circle-small"><i class="fa fa-phone"></i></span>
+                        Позвоните нам +7 (499) 4586 2589
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="m-header-logo-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="/img/logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="m-header-right">
+                <div class="m-header-right--register">
+                    <a href="#">Login</a><!--
+                    --><a href="#">Register</a>
+                </div>
+
+                <div class="m-header-right--social">
+                    <a href="#" class="img-circle-small">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#" class="img-circle-small">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#" class="img-circle-small">
+                        <i class="fa fa-tumblr"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="map">
+    </div>
+
+    <div class="m-left">
+        <div class="m-list">
+            <div class="m-list-filter">
+                <button class="m-list-filter--item is-selection">
+                    <span>Цена</span>
+                </button>
+                <button class="m-list-filter--item is-selection">
+                    <span>Рейтинг</span>
+                </button>
+                <button class="m-list-filter--item">
+                    <span>Парковка</span>
+                </button>
+                <button class="m-list-filter--item">
+                    <span>Кредитные карты</span>
+                </button>
+                <button class="m-list-filter--item is-selection">
+                    <span>Режим работы</span>
+                </button>
+                <button class="m-list-filter--item is-selection">
+                    <span>Районы</span>
+                </button>
+            </div>
+
+            <ul class="m-list-items">
+                <li class="m-list-item">
+                    <img src="/img/places/place-1.jpg" alt="Lumberjack Bar" class="m-list-item--img"/>
+                    <h4 class="m-list-item--title">Lumberjack Bar</h4>
+                    <span class="m-list-item--type">Бары</span>
+                    <span class="m-list-item--description">Негромкий бар на «Китай-городе»</span>
+                    <div class="m-list-item-address">
+                        <span class="m-list-item-address--street">Б.Спасоглинищевский пер., 3, стр. 5</span>
+                        <span class="m-list-item-address--phone">+7 967 061 00 06</span>
+                        <span class="m-list-item-address--station">м. Китай-город</span>
+                    </div>
+                    <div class="m-list-item-right">
+                        <span class="m-list-item-right--rating is-best">8.8</span>
+                        <!--<span class="m-list-item-right--price">8.8</span>-->
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="m-item">
+
+        </div>
+    </div>
+
+
+    <script src="map.js"></script>
+    <script src="header.blur.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
