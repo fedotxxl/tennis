@@ -190,14 +190,6 @@ html, body {
     padding: 16px 0 24px;
   }
 
-  .m-item-details-address {
-    span {
-      font-size: 15px;
-      line-height: 25px;
-      cursor: default;
-    }
-  }
-
   .m-item-details-right--rating {
     @include circle(76px, $color-grey, 4px);
     @extend %item-rating;
@@ -210,15 +202,49 @@ html, body {
   }
 }
 
-.m-item--detailed {
+.m-item-details-address {
+  span {
+    font-size: 15px;
+    line-height: 25px;
+    cursor: default;
+  }
+
+  .m-item-details-address--street {
+    display: block;
+  }
+
+  .m-item-details-address--phone {
+    display: block;
+  }
+
+  .m-item-details-address--site {
+    display: block;
+  }
+
+  .m-item-details-address--station {
+    display: block;
+  }
+}
+
+.m-item-details-hours {
+  display: none;
+}
+
+.m-item-detailed {
+  padding-bottom: 24px;
+
   dl {
     font-size: 15px;
     line-height: 20px;
     padding: 15px 15px 14px;
     border-bottom: 1px solid #dcdcdc;
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
-  dl {
+  dt {
     display: inline-block;
     vertical-align: top;
     width: 30%;
@@ -232,6 +258,42 @@ html, body {
   }
 }
 
+.m-item-reviews {
+  &.is-large {
+    margin: 0 -20px -20px -20px;
+  }
+}
+
+.m-item-reviews-header {
+  @include clearfix;
+
+  background: #eee;
+  padding: 15px 20px;
+
+  .m-item-reviews-header--count {
+    float: left;
+  }
+
+  .m-item-reviews-header--sort {
+    float: right;
+
+    ul {
+      display: inline-block;
+      padding-left: 10px;
+    }
+
+    li {
+      display: inline-block;
+
+      &:last-child {
+        &:before {
+          content: "/ ";
+        }
+      }
+    }
+  }
+}
+
 .m-item-reviews-list {
   background: #f6f6f6;
 }
@@ -240,6 +302,10 @@ html, body {
   border-top: 1px solid $color-grey-border;
   margin: 0 20px;
   padding: 20px 0 0;
+
+  &:first-child {
+    border-top: none;
+  }
 
   .m-item-review--text {
     font-size: 15px;
@@ -251,10 +317,16 @@ html, body {
   line-height: 28px;
   padding: 16px 0 20px;
 
+  %item-review-info-item {
+    line-height: 30px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
   .m-item-review-info--avatar {
     @include border-radius(15px);
+    @extend %item-review-info-item;
 
-    display: inline-block;
     width: 30px;
     height: 30px;
     overflow: hidden;
@@ -267,12 +339,14 @@ html, body {
   }
 
   .m-item-review-info--user {
-    display: inline-block;
+    @extend %item-review-info-item;
+
     margin: 0 10px;
   }
 
   .m-item-review-info--date {
-    display: inline-block;
+    @extend %item-review-info-item;
+
     margin: 0 10px;
   }
 }
