@@ -1,0 +1,32 @@
+<div class="m-list">
+    <div class="m-list-filter">
+        <button class="m-list-filter--item is-selection">
+            <span>Цена</span>
+        </button>
+        <button class="m-list-filter--item is-selection">
+            <span>Рейтинг</span>
+        </button>
+        <button class="m-list-filter--item">
+            <span>Парковка</span>
+        </button>
+        <button class="m-list-filter--item">
+            <span>Кредитные карты</span>
+        </button>
+        <button class="m-list-filter--item is-selection">
+            <span>Режим работы</span>
+        </button>
+        <button class="m-list-filter--item is-selection">
+            <span>Районы</span>
+        </button>
+    </div>
+
+    {{listNow}}
+
+    <ul class="m-list-items">
+        <li class="m-list-item" ng-repeat="item in items">
+            <a ui-sref="list({ filter: shared.filter, item:item })">{{item}}</a>
+        </li>
+    </ul>
+
+    <a ui-sref="list({ filter: anotherFilter, item: shared.item })">another filter</a>
+</div>

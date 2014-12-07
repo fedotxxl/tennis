@@ -6,6 +6,8 @@
     <title>The HTML5 Herald</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
+    <!--<base href="/list.html">-->
+
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="./css/scss/common.css">
     <link rel="stylesheet" href="./css/scss/list.css">
@@ -16,12 +18,17 @@
     <![endif]-->
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/libs/angular-1.3.5.js"></script>
+    <script src="js/libs/angular-ui-router.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/list.js"></script>
     <script src="libs/blur.js"></script>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Open+Sans+Condensed:700,300&subset=latin,cyrillic'
           rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body ng-app="app">
 
     <header class="js-header">
         <div class="m-header">
@@ -68,189 +75,9 @@
     </div>
 
     <div class="m-left">
-        <div class="m-list">
-            <div class="m-list-filter">
-                <button class="m-list-filter--item is-selection">
-                    <span>Цена</span>
-                </button>
-                <button class="m-list-filter--item is-selection">
-                    <span>Рейтинг</span>
-                </button>
-                <button class="m-list-filter--item">
-                    <span>Парковка</span>
-                </button>
-                <button class="m-list-filter--item">
-                    <span>Кредитные карты</span>
-                </button>
-                <button class="m-list-filter--item is-selection">
-                    <span>Режим работы</span>
-                </button>
-                <button class="m-list-filter--item is-selection">
-                    <span>Районы</span>
-                </button>
-            </div>
-
-            <ul class="m-list-items">
-                <li class="m-list-item">
-                    <img src="/img/places/place-1.jpg" alt="Lumberjack Bar" class="m-list-item--img"/>
-                    <h4 class="m-list-item--title">Lumberjack Bar</h4>
-                    <span class="m-list-item--type">Бары</span>
-                    <span class="m-list-item--description">Негромкий бар на «Китай-городе»</span>
-                    <div class="m-list-item-address">
-                        <span class="m-list-item-address--street">Б.Спасоглинищевский пер., 3, стр. 5</span>
-                        <span class="m-list-item-address--phone">+7 967 061 00 06</span>
-                        <span class="m-list-item-address--station">м. Китай-город</span>
-                    </div>
-                    <div class="m-list-item-right">
-                        <span class="m-list-item-right--rating is-best">8.8</span>
-                        <!--<span class="m-list-item-right--price">8.8</span>-->
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="m-item">
-            <div class="m-item-gallery">
-                <ul>
-                    <li>
-                        <img class="m-item-gallery--item" src="/img/places/detailed/1.jpg" alt=""/>
-                    </li>
-                    <li>
-                        <img class="m-item-gallery--item" src="/img/places/detailed/2.jpg" alt=""/>
-                    </li>
-                    <li>
-                        <img class="m-item-gallery--item" src="/img/places/detailed/3.jpg" alt=""/>
-                    </li>
-                    <li>
-                        <img class="m-item-gallery--item" src="/img/places/detailed/4.jpg" alt=""/>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="m-item-details">
-                <h4 class="m-item-details--title">Lumberjack Bar</h4>
-                <div class="m-item-details--row">
-                    <span class="m-item-details--type">Бары</span>
-                    <span class="m-item-details--price">700–1500 рублей</span>
-                </div>
-                <span class="m-item-details--description">Негромкий бар на «Китай-городе»</span>
-                <ul class="m-item-details--tags">
-                  <li><span><i class="fa fa-check"></i>Парковка</span></li>
-                  <li><span><i class="fa fa-check"></i>Кредитные карты</span></li>
-                  <li class="is-inactive"><span><i class="fa fa-times"></i>Душ</span></li>
-                </ul>
-                <div class="m-item-details--address-and-hours">
-                    <div class="m-item-details-address">
-                        <span class="m-item-details-address--street">Б.Спасоглинищевский пер., 3, стр. 5</span>
-                        <span class="m-item-details-address--phone">+7 967 061 00 06</span>
-                        <span class="m-item-details-address--site"><a href="#">www.kelyabar.ru</a></span>
-                        <span class="m-item-details-address--station">м. Китай-город</span>
-                    </div>
-                    <div class="m-item-details-hours">
-                        <span>Работает до 23:30</span>
-                    </div>
-                </div>
-                <span class="m-item-details-right--rating is-best">8.8</span>
-            </div>
-
-            <div class="m-item-detailed">
-                <dl>
-                    <dt>Время работы</dt>
-                    <dd>пн-вс 12.00–23.30</dd>
-                </dl>
-                <dl>
-                    <dt>Банковские карты</dt>
-                    <dd>принимаются</dd>
-                </dl>
-                <dl>
-                    <dt>Парковка</dt>
-                    <dd>есть</dd>
-                </dl>
-                <dl>
-                    <dt>Душ</dt>
-                    <dd>нет</dd>
-                </dl>
-            </div>
-
-            <div class="m-item-reviews is-large">
-                <div class="m-item-reviews-header">
-                    <div class="m-item-reviews-header--count">375 отзывов</div>
-                    <div class="m-item-reviews-header--sort">
-                        Сортировать:
-
-                        <ul>
-                            <li>Популярности</li>
-                            <li>Дате</li>
-                        </ul>
-                    </div>
-                </div>
-                <ul class="m-item-reviews-list">
-                    <li class="m-item-review">
-                        <span class="m-item-review--text">
-                            Никогда не думала, что именно в ресторане бельгийского пива заново открою для себя такой десерт, как "Птичье молоко". Очень и очень вкусно! Мало того, что готовят и выпекают они его самостоятельно
-                        </span>
-                        <div class="m-item-review-info">
-                            <a target="_blank" href="#" class="m-item-review-info--avatar">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjZBQTk0RjUxNkYzMzExRTRBODEwRTVDNzkzMThEQ0EzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjZBQTk0RjUyNkYzMzExRTRBODEwRTVDNzkzMThEQ0EzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NkFBOTRGNEY2RjMzMTFFNEE4MTBFNUM3OTMxOERDQTMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NkFBOTRGNTA2RjMzMTFFNEE4MTBFNUM3OTMxOERDQTMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz702fSrAAAL70lEQVR42uxdC5CWVRk+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">
-                            </a>
-                            <a href="#" target="_blank" class="m-item-review-info--user">Мария Дмитриева</a>
-                            <span class="m-item-review-info--date">5 марта 2011</span>
-                        </div>
-                    </li>
-
-                    <li class="m-item-review">
-                        <span class="m-item-review--text">
-                            Никогда не думала, что именно в ресторане бельгийского пива заново открою для себя такой десерт, как "Птичье молоко". Очень и очень вкусно! Мало того, что готовят и выпекают они его самостоятельно
-                        </span>
-                        <div class="m-item-review-info">
-                            <a target="_blank" href="#" class="m-item-review-info--avatar">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjZBQTk0RjUxNkYzMzExRTRBODEwRTVDNzkzMThEQ0EzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjZBQTk0RjUyNkYzMzExRTRBODEwRTVDNzkzMThEQ0EzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NkFBOTRGNEY2RjMzMTFFNEE4MTBFNUM3OTMxOERDQTMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NkFBOTRGNTA2RjMzMTFFNEE4MTBFNUM3OTMxOERDQTMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz702fSrAAAL70lEQVR42uxdC5CWVRk+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">
-                            </a>
-                            <a href="#" target="_blank" class="m-item-review-info--user">Мария Дмитриева</a>
-                            <span class="m-item-review-info--date">5 марта 2011</span>
-                        </div>
-                    </li>
-
-                    <li class="m-item-review">
-                        <span class="m-item-review--text">
-                            Никогда не думала, что именно в ресторане бельгийского пива заново открою для себя такой десерт, как "Птичье молоко". Очень и очень вкусно! Мало того, что готовят и выпекают они его самостоятельно
-                        </span>
-                        <div class="m-item-review-info">
-                            <a target="_blank" href="#" class="m-item-review-info--avatar">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjZBQTk0RjUxNkYzMzExRTRBODEwRTVDNzkzMThEQ0EzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjZBQTk0RjUyNkYzMzExRTRBODEwRTVDNzkzMThEQ0EzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NkFBOTRGNEY2RjMzMTFFNEE4MTBFNUM3OTMxOERDQTMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NkFBOTRGNTA2RjMzMTFFNEE4MTBFNUM3OTMxOERDQTMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz702fSrAAAL70lEQVR42uxdC5CWVRk++2sEy8LoEozcL7uJmsotCSLk5gUCpNEsAaMNqCxBKMOgxolhyjEJgVhJLckpw5qJNi/oAkqARDkiLKBcbLljMcguxO4CS1x6n9nny7Pvf/79b+f791+nd+YZ+M73fee85/3Oec/7vuf9z+bMnTvXNCJ9QtBH0FNwDf/tKGgjyBXkCc4JqgUn+e8xwR7Bbv67VXC8sTpweYbbg1BGCIYLhgluFOTEeaeZIJ8I6Bbr/5cE2wV/EawVvC44/VESYERwq6BIMFbQ0nP9+AC9iJmCGsFLgmcFawQXw+5cWJTHDu0VlAruCUF4LmrJtkrZ9kzy0mRGYAvBNMFD1HEN0XlOvzLBe8Q/BBXUd1V8rhWFAN3YRVAouJ6jDjr0YzHq7yZYKPihYL5gieBMNgsQX/6n7GQsOiL4s+BVwXpOuXhURfxL8I5jxA0RfF5wp6B9jMUKfN0v+L7g99k2hbtSIM/HEF6t4Dl2FM9OF7ySoPDiUQ3rwqjvLBgtWM42NXUhj6XkIysEeC+n4cgYI+cRTqWvCDaErNQvUJgT2eaPBaccz91Onu9tTAE2Fzwj+K2gtboH222BoDv1z9FGMNHQ5sOCHuTlnLrfmrwvY18yKsB2tLkmO+69QeX+PS4GjU0V5KUXedP0NfalXaYEiFG1STBQlf9H8CD13G6TfbSbvD1IXm0ayD51D1uA1wo2CgpU+UHBzYLH6RlkK10ij+D1gLpXwL5dG5YAYXutFnRQ5etpi/3dNB0Cr33Ju00d2MdC3wJsSzOlkyov4ep7wjQ9OkHeS1R5J/a1rS8BNqNvqb8KVq+7BWdN06Wz7MMyx2xDnz/uwxNZKviMKntR8A3aXb7dQCj0G6jQ8yxjeZ9gB6efz2jLBfYF3sodVjn6/IRgajoChKE5RZUhbDTeo/By6D1M5ZSK99Vr6Uks4yi55EmI41nfcKscfV9HLyrpKdyVX8CmvfQ3fY2AwTQfwPi4RKYMn8GzL/Ddmz3xgj7dxT7a9ERDbl9DAnxKeRjQF180dZHhdKk1vypcuwFp1DOAK+lyhzeUCp2kEM8qXp9KdgrfQ3/RptkMO/kKPMSyt/ZSsLsElSy7UnAdR1uB4x1Mv96CUbRJ06Ft7Osi5TuPZyCivv5x7Inkkvkuym76rAd904nTrrMqP0/mFgvejlNHP8EMdkgPgMPk84iHGMFf1ew4xI9+Ot4UnqaEBwX7LQ/Cw1R4zSE8xPf6CyYlIDzDZ/DsTSY6NtiZbaQ7nS+yzxdUKGxaPB0Is2GWQ4n6mLq/MHW7btocwojZmkJ9ZXz3RVXek22lS2WORfQho7YHIo7IhB2GRyxtngdmEC2eoMqWc0WvSqPeKtbxO1U+gW2mS/NM/XhiG8rIKUD8/zuqgmIPISnUO9+hqKd4siUv0IbUo3i+ST9gXEEZ2PRdu167gVtVOAebL0s8dHAsV1C7w0WeXUDUNVl9kOuUZ5EqFZv6G1HdBLe5BFikXvyj8RNJnuyYumXGP5U5pvJkD/ViI2uFKivSAszlSLHpV558W21PLgoxOLBYXd9GHtKlX6rrMYZ73BGrIXvTG3bURg8ND1LuGYzkLSEKcAuDDrbbN8hDvRtpYwbUkirvfwLUO2p/Mn52zz6lrtdlIES1Lg4PqdqFOm440hbgcHXzVU+d6aGu92RAgLvUdYGnel9R18MDAWI36pPKrdrgqdFW6joTaWgVDufAB71B2QQEmbWDAPuqB7eaDKaHNSE67dDf/SKMYmgB+iLtZbTJQEd1G9WeTSWbekGAhQ7n3hftU9fXZECAuo29HuvWsimMmOjN5H0eG3xXXQ/NgACHxuHB54DoAQHqfd4jHhtE7K9WrYh9QhReH7Xq1pIHX3RYXbeHAPNV4UmPDULxrlJlc0IUoK57tecF8Zi6zo84XJ1qz536tbrGvkr/EITXn3U31Ha6pPMZcyMOW63Kc6MIeO60rrGNiU2a5h7bQF1PmvoZ/zCoX/DcFy2bPAjwXMhKHW6QjnL3ZrDCR4JnhHVp3TrLhJyhHzReFcd78OUGLVdlE+lzp+Mp5LGOiaocG1QrQ+iH5rXaJcCwfhKATZr3VNk4rpK9U6ivF98dp8qR5X9fSH3QsjntEuAVITWOvYVbHKYA8mDeMnU/jOmXQD39+OxmvqvNjBHGnRftg3TGViX2VT9Qhfit2raQGEAHkc6hN9bBx1eJclOXbfCuZVLhoyIsNcTEzt1DpOd2xwfySfoXCEfB+P6Qwj+xCJkD2LB+WvBlx/1Ck0SCI+kPpi7D6lTIvOvw3N4Iv7hN12fA3UJHkT4yxkTH75IhvDuWdZ3KAN9aNuURR4Sht8kcrSRTd9JeTMSkOsdn7+K7L2eQXy2b7ZjCOsaF+GCuyVxMMAiXl7BdJFjeaOonWFZT1ezgytsY8cpcEx073Xw5/btyS++gDFlQpY3AJATzOpFtNNjUT2aCuXQs8ATWqodHmf+TJp0qstZYrpTeRPqS4LIsYLqFZ585VYIs7lZlpcYakmsYaQj2hq8ydfueYU9jpKPdROWMTZputEPbOgSH9IpK2nn7aPdtoxH+z5D5hCzaq6jMGluANVzNbLtsUggCxIjCfupoeiVdk3y3I6HTghG2f419QMdqPfM9SV2/TJnVi4Y8qx76AkeiDxrE+o/R+Z9iPP1e1zL+v2nqktWP0kj/tKe6r6IsjEtWtgARvT2gvvj0NBrOoX2HKbaRblqygQpM22SzuOD2fd1qN908wemmftD5IGUVJUDYY4+rl5HSmp9Co0Pp7K+IMxLO0O9FwtFUvgd3qRU/QC6Zx/9bU08O57M/p4Bq44z8lXwulV8D5JvotN6Fxooz6iTzPI5Ce28VjM5IsEG8t4CjLRYd4jRGtPhvHvRVCwpqHEd8hwYMdkSt5yTh9iHb6wHruoILXbVrBAYW/2Oq7NsJundDuSq6hIcE9VXUJRhhyIRd50nZn+ECMp3RktEcdTopPsK+lHHlT8Rtu1+VPWbUnpErpF7MUWKHmpaahk8YmslOdHR89eUMXY3kqPP9+zqbgjMTxtAddFkR3Tmli+Lo76XKFj5kotN9nQKEOzVblQ2MsaDkUH8tdBjeb1PvTDSZycrS9A49KmCnuodfoGLHbm6Mdx8w0b/In+PywWNt6jxvovdzce5KL4eOmOEYBfMovLeywIsoZRDgZ45p/SPBT1QZ+vioKlttovd0GhQg6D6lbJtzVQ1C/rMdo/IEvzgYO59Ffix07SwuMnrf+wemLvM+MIFWKC/olGlgj6UhAR5wLOEFXEHhsTyi7iEZ+3OBi5OlhBOThpkPf4NnLw6jKLwChym3PxUBgnCuyjOqbBjL7UUF+ypDHLomG2kzbcl/q2BBiYnO1F3GvppUBWi4lL+pyuzDvhAhvoPxsaZC2xhdsS0C/VvlNx1mTEoChP7AvkN5jPs4magpndhhrAjUozHulbPPZ30IMJii0BHvO+7B5rqyCQoQPA92lL/Pvn6QSCXJ5KaUMy6m912h+7aY9H55nmkaQDtVHxdwmH0sT7SiZJN7dtHv1IsF/MMNNAdyslhwOeRxg4nOzN3JviW1zZpKdlSQXbDJsbAsoI/bMwuFdzV5W2CiT7zcxD4lndWQanpZJZf8Ysc9TIvttPzbZIHg8snLDuM+4aOYfalMpfJ08vNq6YnAuj/p8DVxSto+unXtGkFw7dj2fvLSTN0PTuiYnk5UyEeCYwlDP6sc9xAExSGIiOL+hiMgTB15GVfQ59jmw8Z9fgJ47UOvKi3ydYbqQYarJqhQmO1H4wjQ9XwWQdpxxk8q3RWsawnbDo4AdW2HHiKPI0308XeprUohHAUf7KXAeY93DPIFegXBMch7aEIcpxN/mgo/j3Yb/u3BRepqRk56m/h72MepB/HhsvoYZEMG4Zzj5IwpDHd1a2DK9TXROSe+CKNsMf35qjAaCPMkczC8iNENTBmc3VxjwqcatjWSbS8KS3hhjUBNF6m0geCPEYxgVOcGD4vKJZooOFUuSEz6SP0xApvQsZcIUFuuhtBn+s9htDQfpprUEBX0VYM/hwG9uTVRvzUM+q8AAwC4ep5mpPUv2AAAAABJRU5ErkJggg==">
-                            </a>
-                            <a href="#" target="_blank" class="m-item-review-info--user">Мария Дмитриева</a>
-                            <span class="m-item-review-info--date">5 марта 2011</span>
-                        </div>
-                    </li>
-
-                    <li class="m-item-review">
-                        <span class="m-item-review--text">
-                            Никогда не думала, что именно в ресторане бельгийского пива заново открою для себя такой десерт, как "Птичье молоко". Очень и очень вкусно! Мало того, что готовят и выпекают они его самостоятельно
-                        </span>
-                        <div class="m-item-review-info">
-                            <a target="_blank" href="#" class="m-item-review-info--avatar">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjZBQTk0RjUxNkYzMzExRTRBODEwRTVDNzkzMThEQ0EzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjZBQTk0RjUyNkYzMzExRTRBODEwRTVDNzkzMThEQ0EzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NkFBOTRGNEY2RjMzMTFFNEE4MTBFNUM3OTMxOERDQTMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NkFBOTRGNTA2RjMzMTFFNEE4MTBFNUM3OTMxOERDQTMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz702fSrAAAL70lEQVR42uxdC5CWVRk+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">
-                            </a>
-                            <a href="#" target="_blank" class="m-item-review-info--user">Мария Дмитриева</a>
-                            <span class="m-item-review-info--date">5 марта 2011</span>
-                        </div>
-                    </li>
-
-                    <li class="m-item-review">
-                        <span class="m-item-review--text">
-                            Никогда не думала, что именно в ресторане бельгийского пива заново открою для себя такой десерт, как "Птичье молоко". Очень и очень вкусно! Мало того, что готовят и выпекают они его самостоятельно
-                        </span>
-                        <div class="m-item-review-info">
-                            <a target="_blank" href="#" class="m-item-review-info--avatar">
-                                <img src="http://img03.rl0.ru/afisha/80x80/newid.afisha.ru/StaticContent/UserPhoto/d8/68/2ae5eea9925442e58428eeebcd46d868.jpg">
-                            </a>
-                            <a href="#" target="_blank" class="m-item-review-info--user">Мария Дмитриева</a>
-                            <span class="m-item-review-info--date">5 марта 2011</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <div ui-view></div>
+        <div ng-controller="FilterController" ng-include="'/partials/partial-list-list.html'"></div>
+        <div ng-controller="ItemController" ng-include="'/partials/partial-list-item.html'"></div>
     </div>
 
 
