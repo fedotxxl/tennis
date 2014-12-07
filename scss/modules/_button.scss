@@ -22,7 +22,7 @@
     color: #B4B4B4;
   }
 
-  span {
+  > span {
     display: block;
     padding: 0 13px;
     position: relative;
@@ -54,7 +54,7 @@
     background: url("/img/arrow.svg") 0 0 no-repeat;
   }
 
-  span {
+  > span {
     padding-right: 28px;
   }
 }

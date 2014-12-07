@@ -48,7 +48,7 @@
   color: #B4B4B4;
 }
 /* line 25, H:/job/projects-active/tennis/scss/modules/_button.scss */
-.m-list-filter .m-list-filter--item span, .m-item-details--tags li span {
+.m-list-filter .m-list-filter--item > span, .m-item-details--tags li > span {
   display: block;
   padding: 0 13px;
   position: relative;
@@ -68,7 +68,7 @@
   background: url("/img/arrow.svg") 0 0 no-repeat;
 }
 /* line 57, H:/job/projects-active/tennis/scss/modules/_button.scss */
-.m-list-filter .m-list-filter--item.is-selection span {
+.m-list-filter .m-list-filter--item.is-selection > span {
   padding-right: 28px;
 }
 
