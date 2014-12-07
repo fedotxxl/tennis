@@ -76,7 +76,7 @@
     <div id="map">
     </div>
 
-    <div class="m-left">
+    <div class="m-left" ng-controller="ListAndItemController">
         <div ui-view></div>
         <div ng-controller="FilterController" ng-include="'/partials/partial-list-list.html'"></div>
         <div ng-controller="ItemController" ng-include="'/partials/partial-list-item.html'"></div>

@@ -1,9 +1,14 @@
 angular.module('app').
-    controller('ListController', function($rootScope, $scope, $stateParams) {
-        console.log("abc");
-        $rootScope.shared = {filter: $stateParams.filter, item: $stateParams.item}
+    controller("ListAndItemController", function($scope) {
+        $scope.shared = {};
     }).
-    controller('FilterController', function($scope, $rootScope, _data, _filter) {
+    controller('ListAndItemRouterController', function($scope, $stateParams) {
+        $scope.shared.filterUrl = $stateParams.filter;
+        $scope.shared.itemId = $stateParams.item;
+    }).
+    controller('FilterController', function($scope, _data, _filter) {
+        var lastFilterUrl = null;
+
         var loadItems = function() {
             $scope.loading = true;
             _data.getList(_filter.toCheckedObject()).then(function(items) {
@@ -12,11 +17,10 @@ angular.module('app').
             });
         };
 
-        loadItems();
-
-        $rootScope.$watch('shared.filter', function (current, prev) {
-                if (current != prev) {
-                    _filter.fromUrl(current)
+        $scope.$watch('shared.filterUrl', function (current, prev) {
+                if (lastFilterUrl != current) {
+                    _filter.fromUrl(current);
+                    lastFilterUrl = null;
                 }
             }
         );
@@ -29,21 +33,22 @@ angular.module('app').
         );
     }).
     controller('ItemController', function($rootScope, $scope, _data) {
+        var lastItemId = null;
+
         var loadItem = function() {
             if ($rootScope.shared && $rootScope.shared.item) {
                 $scope.loading = true;
-                _data.getItem($rootScope.shared.item).then(function(item) {
+                _data.getItem($rootScope.shared.itemId).then(function(item) {
                     $scope.item = item;
                     $scope.loading = false;
                 });
             }
         };
 
-        loadItem();
-
-        $rootScope.$watch('shared.item', function (current, prev) {
-                if (current != prev) {
+        $scope.$watch('shared.itemId', function (current, prev) {
+                if (current != lastItemId) {
                     loadItem();
+                    lastItemId = current;
                 }
             }
         );
@@ -66,7 +71,7 @@ angular.module('app').
                 views: {
                     '': {
                         template: '<div></div>',
-                        controller: 'ListController'
+                        controller: 'ListAndItemRouterController'
                     }
 //                    'list@list': {
 //                        templateUrl: '/partials/partial-list-list.html',

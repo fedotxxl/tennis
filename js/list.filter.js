@@ -52,7 +52,7 @@ angular.module("app")
         };
 
         var fromUrl = function() {
-
+            console.log("loading from url")
         };
 
         var toCheckedObject = function() {
@@ -76,7 +76,7 @@ angular.module("app")
         };
 
         addPossibleItem("Цена", "price", [{key: '1', title: "x"}, {key: "2", title: "xx"}, {key: "3", title: "xxx"}], true);
-//        addPossibleItem("Рейтинг", "rate", ["1", "2", "3"]);
+//        addPossibleItem("Рейтинг", "rating", ["1", "2", "3"]);
         addPossibleItem("Парковка", "parking");
 //        addPossibleItem("Кредитные карты", "credit");
 
