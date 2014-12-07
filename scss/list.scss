@@ -8,7 +8,7 @@ html, body {
 
 %item-rating {
   &.is-best {
-    border-color: #3c3;
+    border-color: $color-green;
   }
 }
 
@@ -202,6 +202,30 @@ html, body {
   }
 }
 
+.m-item-details--tags {
+
+  padding-top: 16px;
+
+  li {
+    @extend %button;
+    display: inline-block;
+  }
+
+  .fa {
+    padding-right: 4px;
+    margin-left: -4px;
+  }
+
+  .fa-check {
+    color: $color-green;
+  }
+
+  .fa-times {
+    color: $color-red;
+    opacity: 0.4;
+  }
+}
+
 .m-item-details-address {
   span {
     font-size: 15px;
@@ -232,6 +256,7 @@ html, body {
 
 .m-item-detailed {
   padding-bottom: 24px;
+  display: none;
 
   dl {
     font-size: 15px;

@@ -18,6 +18,10 @@
     box-shadow: 0 0 0 1px rgba(0,0,0,.2);
   }
 
+  &.is-inactive {
+    color: #B4B4B4;
+  }
+
   span {
     display: block;
     padding: 0 13px;
