@@ -130,20 +130,44 @@ html, body {
   width: 50%;
   margin-left: 50%;
   border-left: 1px solid $color-grey-border;
-  padding: 20px;
+  padding: 12px 20px 20px 20px;
 }
 
 .m-item-gallery {
-  @include clearfix;
 
-  margin: 0 0 32px;
+  position: relative;
+  margin: 0 -20px 32px -20px;
+  height: 155px;
+  overflow: hidden;
+
+
+  ul {
+    @include clearfix;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9999px;
+    margin-left: -40px;
+  }
+
+  li {
+    float: left;
+    margin: 0 1px;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
 
   .m-item-gallery--item {
     overflow: hidden;
     width: 155px;
     height: 155px;
-    margin: 0 1px;
-    float: left;
 
     img {
       width: 100%;
