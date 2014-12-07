@@ -4,6 +4,12 @@
   font-size: 13px;
   border-radius: 3px;
 
+  &.is-checked {
+    &:before {
+      background: #FFF8E2;
+    }
+  }
+
   &:before {
     position: absolute;
     top: 1px;

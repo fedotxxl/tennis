@@ -3,9 +3,11 @@
         <p-filter-buttons/>
     </div>
 
-    {{listNow}}
+    <div ng-show="loading" class="m-list-items-loading ng-cloak">
+        Loading...
+    </div>
 
-    <ul class="m-list-items">
+    <ul class="m-list-items" ng-hide="loading">
         <li class="m-list-item" ng-repeat="item in items">
             <a ui-sref="list({ filter: shared.filter, item:item })">{{item}}</a>
         </li>

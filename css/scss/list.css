@@ -23,14 +23,18 @@
 }
 
 /* line 1, H:/job/projects-active/tennis/scss/modules/_button.scss */
-.m-list-filter .m-list-filter--item, .m-item-details--tags li {
+.m-item-details--tags li, .m-list-filter .m-list-filter--item {
   position: relative;
   line-height: 28px;
   font-size: 13px;
   border-radius: 3px;
 }
-/* line 7, H:/job/projects-active/tennis/scss/modules/_button.scss */
-.m-list-filter .m-list-filter--item:before, .m-item-details--tags li:before {
+/* line 8, H:/job/projects-active/tennis/scss/modules/_button.scss */
+.m-item-details--tags li.is-checked:before, .m-list-filter .is-checked.m-list-filter--item:before {
+  background: #FFF8E2;
+}
+/* line 13, H:/job/projects-active/tennis/scss/modules/_button.scss */
+.m-item-details--tags li:before, .m-list-filter .m-list-filter--item:before {
   position: absolute;
   top: 1px;
   right: 1px;
@@ -43,18 +47,18 @@
   -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
-/* line 21, H:/job/projects-active/tennis/scss/modules/_button.scss */
-.m-list-filter .is-inactive.m-list-filter--item, .m-item-details--tags li.is-inactive {
+/* line 27, H:/job/projects-active/tennis/scss/modules/_button.scss */
+.m-item-details--tags li.is-inactive, .m-list-filter .is-inactive.m-list-filter--item {
   color: #B4B4B4;
 }
-/* line 25, H:/job/projects-active/tennis/scss/modules/_button.scss */
-.m-list-filter .m-list-filter--item > span, .m-item-details--tags li > span {
+/* line 31, H:/job/projects-active/tennis/scss/modules/_button.scss */
+.m-item-details--tags li > span, .m-list-filter .m-list-filter--item > span {
   display: block;
   padding: 0 13px;
   position: relative;
 }
 
-/* line 42, H:/job/projects-active/tennis/scss/modules/_button.scss */
+/* line 48, H:/job/projects-active/tennis/scss/modules/_button.scss */
 .m-list-filter .m-list-filter--item.is-selection:after {
   top: 50%;
   width: 11px;
@@ -67,141 +71,12 @@
   content: '';
   background: url("/img/arrow.svg") 0 0 no-repeat;
 }
-/* line 57, H:/job/projects-active/tennis/scss/modules/_button.scss */
+/* line 63, H:/job/projects-active/tennis/scss/modules/_button.scss */
 .m-list-filter .m-list-filter--item.is-selection > span {
   padding-right: 28px;
 }
 
-/* line 5, H:/job/projects-active/tennis/scss/list.scss */
-html, body {
-  height: 100%;
-}
-
-/* line 10, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item-right .is-best.m-list-item-right--rating, .m-item-details .is-best.m-item-details-right--rating {
-  border-color: #33cc33;
-}
-
-/* line 15, H:/job/projects-active/tennis/scss/list.scss */
-#map {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-/* line 23, H:/job/projects-active/tennis/scss/list.scss */
-.m-left {
-  position: relative;
-  width: 50%;
-  margin: 15px 0 50px 50px;
-  min-height: 600px;
-  border: 3px solid #f1c40f;
-  background: white;
-}
-
-/* line 33, H:/job/projects-active/tennis/scss/list.scss */
-.m-list {
-  width: 50%;
-  float: left;
-}
-
-/* line 38, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-filter {
-  padding: 5px 7px;
-  border-bottom: 1px #d9d9d9 solid;
-}
-/* line 42, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-filter .m-list-filter--item {
-  margin: 5px 3px;
-}
-/* line 51, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-filter .m-list-filter--item span {
-  color: #2c3e50;
-}
-
-/* line 57, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item {
-  position: relative;
-  padding: 16px 40px 20px 160px;
-  border-bottom: 1px solid #d9d9d9;
-}
-/* line 62, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item .m-list-item--img {
-  position: absolute;
-  left: 20px;
-  width: 120px;
-  height: 120px;
-  margin: 4px 0 0;
-}
-/* line 70, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item .m-list-item--title {
-  display: block;
-  padding: 0 20px 7px 0;
-  font-size: 25px;
-  line-height: 25px;
-}
-/* line 77, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item .m-list-item--type {
-  display: block;
-  font-size: 15px;
-  line-height: 20px;
-}
-/* line 83, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item .m-list-item--description {
-  display: block;
-  padding: 6px 0 0;
-  font-size: 15px;
-  font-style: italic;
-  line-height: 20px;
-}
-
-/* line 92, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item-right {
-  position: absolute;
-  display: block;
-  right: 15px;
-  top: 19px;
-  width: 35px;
-  text-align: center;
-}
-/* line 100, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item-right .m-list-item-right--rating {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  line-height: 31px;
-  color: #2c3e50;
-  border: 2px solid #2c3e50;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 15px;
-  cursor: default;
-}
-
-/* line 109, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item-address {
-  display: block;
-  padding: 5px 0 0;
-  font-size: 12px;
-  line-height: 20px;
-  color: #2c3e50;
-}
-/* line 116, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item-address .m-list-item-address--street {
-  display: block;
-}
-/* line 120, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item-address .m-list-item-address--phone {
-  display: block;
-}
-/* line 124, H:/job/projects-active/tennis/scss/list.scss */
-.m-list-item-address .m-list-item-address--station {
-  display: block;
-}
-
-/* line 129, H:/job/projects-active/tennis/scss/list.scss */
+/* line 1, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item {
   width: 50%;
   margin-left: 50%;
@@ -209,14 +84,14 @@ html, body {
   padding: 12px 20px 20px 20px;
 }
 
-/* line 136, H:/job/projects-active/tennis/scss/list.scss */
+/* line 8, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-gallery {
   position: relative;
   margin: 0 -20px 32px -20px;
   height: 155px;
   overflow: hidden;
 }
-/* line 144, H:/job/projects-active/tennis/scss/list.scss */
+/* line 16, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-gallery ul {
   overflow: hidden;
   *zoom: 1;
@@ -226,35 +101,35 @@ html, body {
   width: 9999px;
   margin-left: -40px;
 }
-/* line 154, H:/job/projects-active/tennis/scss/list.scss */
+/* line 26, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-gallery li {
   float: left;
   margin: 0 1px;
 }
-/* line 158, H:/job/projects-active/tennis/scss/list.scss */
+/* line 30, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-gallery li:first-child {
   margin: 0;
 }
-/* line 162, H:/job/projects-active/tennis/scss/list.scss */
+/* line 34, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-gallery li:last-child {
   margin: 0;
 }
-/* line 167, H:/job/projects-active/tennis/scss/list.scss */
+/* line 39, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-gallery .m-item-gallery--item {
   overflow: hidden;
   width: 155px;
   height: 155px;
 }
-/* line 172, H:/job/projects-active/tennis/scss/list.scss */
+/* line 44, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-gallery .m-item-gallery--item img {
   width: 100%;
 }
 
-/* line 178, H:/job/projects-active/tennis/scss/list.scss */
+/* line 50, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details {
   position: relative;
 }
-/* line 181, H:/job/projects-active/tennis/scss/list.scss */
+/* line 53, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details .m-item-details--title {
   width: 70%;
   font-size: 30px;
@@ -263,34 +138,34 @@ html, body {
   cursor: default;
   margin: -7px 0 0;
 }
-/* line 190, H:/job/projects-active/tennis/scss/list.scss */
+/* line 62, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details .m-item-details--row {
   font-size: 14px;
   line-height: 25px;
 }
-/* line 195, H:/job/projects-active/tennis/scss/list.scss */
+/* line 67, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details .m-item-details--type {
   display: inline-block;
   line-height: 25px;
 }
-/* line 200, H:/job/projects-active/tennis/scss/list.scss */
+/* line 72, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details .m-item-details--price {
   display: inline-block;
   line-height: 25px;
   margin-left: 16px;
 }
-/* line 206, H:/job/projects-active/tennis/scss/list.scss */
+/* line 78, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details .m-item-details--description {
   padding: 14px 50px 16px 0;
   font-size: 15px;
   line-height: 20px;
   cursor: default;
 }
-/* line 213, H:/job/projects-active/tennis/scss/list.scss */
+/* line 85, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details .m-item-details--address-and-hours {
   padding: 16px 0 24px;
 }
-/* line 217, H:/job/projects-active/tennis/scss/list.scss */
+/* line 89, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details .m-item-details-right--rating {
   display: inline-block;
   width: 76px;
@@ -306,80 +181,80 @@ html, body {
   font-size: 30px;
 }
 
-/* line 229, H:/job/projects-active/tennis/scss/list.scss */
+/* line 101, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details--tags {
   padding-top: 16px;
 }
-/* line 233, H:/job/projects-active/tennis/scss/list.scss */
+/* line 105, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details--tags li {
   display: inline-block;
 }
-/* line 238, H:/job/projects-active/tennis/scss/list.scss */
+/* line 110, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details--tags .fa {
   padding-right: 4px;
   margin-left: -4px;
 }
-/* line 243, H:/job/projects-active/tennis/scss/list.scss */
+/* line 115, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details--tags .fa-check {
   color: #33cc33;
 }
-/* line 247, H:/job/projects-active/tennis/scss/list.scss */
+/* line 119, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details--tags .fa-times {
   color: red;
   opacity: 0.4;
 }
 
-/* line 254, H:/job/projects-active/tennis/scss/list.scss */
+/* line 126, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details-address span {
   font-size: 15px;
   line-height: 25px;
   cursor: default;
 }
-/* line 260, H:/job/projects-active/tennis/scss/list.scss */
+/* line 132, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details-address .m-item-details-address--street {
   display: block;
 }
-/* line 264, H:/job/projects-active/tennis/scss/list.scss */
+/* line 136, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details-address .m-item-details-address--phone {
   display: block;
 }
-/* line 268, H:/job/projects-active/tennis/scss/list.scss */
+/* line 140, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details-address .m-item-details-address--site {
   display: block;
 }
-/* line 272, H:/job/projects-active/tennis/scss/list.scss */
+/* line 144, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details-address .m-item-details-address--station {
   display: block;
 }
 
-/* line 277, H:/job/projects-active/tennis/scss/list.scss */
+/* line 149, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-details-hours {
   display: none;
 }
 
-/* line 281, H:/job/projects-active/tennis/scss/list.scss */
+/* line 153, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-detailed {
   padding-bottom: 24px;
   display: none;
 }
-/* line 285, H:/job/projects-active/tennis/scss/list.scss */
+/* line 157, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-detailed dl {
   font-size: 15px;
   line-height: 20px;
   padding: 15px 15px 14px;
   border-bottom: 1px solid #dcdcdc;
 }
-/* line 291, H:/job/projects-active/tennis/scss/list.scss */
+/* line 163, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-detailed dl:last-child {
   border-bottom: none;
 }
-/* line 296, H:/job/projects-active/tennis/scss/list.scss */
+/* line 168, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-detailed dt {
   display: inline-block;
   vertical-align: top;
   width: 30%;
 }
-/* line 302, H:/job/projects-active/tennis/scss/list.scss */
+/* line 174, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-detailed dd {
   display: inline-block;
   vertical-align: top;
@@ -387,73 +262,73 @@ html, body {
   overflow: hidden;
 }
 
-/* line 311, H:/job/projects-active/tennis/scss/list.scss */
+/* line 183, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-reviews.is-large {
   margin: 0 -20px -20px -20px;
 }
 
-/* line 316, H:/job/projects-active/tennis/scss/list.scss */
+/* line 188, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-reviews-header {
   overflow: hidden;
   *zoom: 1;
   background: #eee;
   padding: 15px 20px;
 }
-/* line 322, H:/job/projects-active/tennis/scss/list.scss */
+/* line 194, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-reviews-header .m-item-reviews-header--count {
   float: left;
 }
-/* line 326, H:/job/projects-active/tennis/scss/list.scss */
+/* line 198, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-reviews-header .m-item-reviews-header--sort {
   float: right;
 }
-/* line 329, H:/job/projects-active/tennis/scss/list.scss */
+/* line 201, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-reviews-header .m-item-reviews-header--sort ul {
   display: inline-block;
   padding-left: 10px;
 }
-/* line 334, H:/job/projects-active/tennis/scss/list.scss */
+/* line 206, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-reviews-header .m-item-reviews-header--sort li {
   display: inline-block;
 }
-/* line 338, H:/job/projects-active/tennis/scss/list.scss */
+/* line 210, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-reviews-header .m-item-reviews-header--sort li:last-child:before {
   content: "/ ";
 }
 
-/* line 346, H:/job/projects-active/tennis/scss/list.scss */
+/* line 218, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-reviews-list {
   background: #f6f6f6;
 }
 
-/* line 350, H:/job/projects-active/tennis/scss/list.scss */
+/* line 222, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-review {
   border-top: 1px solid #d9d9d9;
   margin: 0 20px;
   padding: 20px 0 0;
 }
-/* line 355, H:/job/projects-active/tennis/scss/list.scss */
+/* line 227, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-review:first-child {
   border-top: none;
 }
-/* line 359, H:/job/projects-active/tennis/scss/list.scss */
+/* line 231, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-review .m-item-review--text {
   font-size: 15px;
   line-height: 20px;
 }
 
-/* line 365, H:/job/projects-active/tennis/scss/list.scss */
+/* line 237, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-review-info {
   line-height: 28px;
   padding: 16px 0 20px;
 }
-/* line 369, H:/job/projects-active/tennis/scss/list.scss */
+/* line 241, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-review-info .m-item-review-info--avatar, .m-item-review-info .m-item-review-info--user, .m-item-review-info .m-item-review-info--date {
   line-height: 30px;
   vertical-align: middle;
   display: inline-block;
 }
-/* line 375, H:/job/projects-active/tennis/scss/list.scss */
+/* line 247, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-review-info .m-item-review-info--avatar {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -465,16 +340,145 @@ html, body {
   overflow: hidden;
   background-clip: padding-box;
 }
-/* line 384, H:/job/projects-active/tennis/scss/list.scss */
+/* line 256, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-review-info .m-item-review-info--avatar img {
   width: 30px;
   height: 30px;
 }
-/* line 390, H:/job/projects-active/tennis/scss/list.scss */
+/* line 262, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-review-info .m-item-review-info--user {
   margin: 0 10px;
 }
-/* line 396, H:/job/projects-active/tennis/scss/list.scss */
+/* line 268, H:/job/projects-active/tennis/scss/_list.item.scss */
 .m-item-review-info .m-item-review-info--date {
   margin: 0 10px;
+}
+
+/* line 6, H:/job/projects-active/tennis/scss/list.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 11, H:/job/projects-active/tennis/scss/list.scss */
+.m-item-details .is-best.m-item-details-right--rating, .m-list-item-right .is-best.m-list-item-right--rating {
+  border-color: #33cc33;
+}
+
+/* line 16, H:/job/projects-active/tennis/scss/list.scss */
+#map {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 24, H:/job/projects-active/tennis/scss/list.scss */
+.m-left {
+  position: relative;
+  width: 50%;
+  margin: 15px 0 50px 50px;
+  min-height: 600px;
+  border: 3px solid #f1c40f;
+  background: white;
+}
+
+/* line 34, H:/job/projects-active/tennis/scss/list.scss */
+.m-list {
+  width: 50%;
+  float: left;
+}
+
+/* line 39, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-filter {
+  padding: 5px 7px;
+  border-bottom: 1px #d9d9d9 solid;
+}
+/* line 43, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-filter .m-list-filter--item {
+  margin: 5px 3px;
+}
+/* line 52, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-filter .m-list-filter--item span {
+  color: #2c3e50;
+}
+
+/* line 58, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-item {
+  position: relative;
+  padding: 16px 40px 20px 160px;
+  border-bottom: 1px solid #d9d9d9;
+}
+/* line 63, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-item .m-list-item--img {
+  position: absolute;
+  left: 20px;
+  width: 120px;
+  height: 120px;
+  margin: 4px 0 0;
+}
+/* line 71, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-item .m-list-item--title {
+  display: block;
+  padding: 0 20px 7px 0;
+  font-size: 25px;
+  line-height: 25px;
+}
+/* line 78, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-item .m-list-item--type {
+  display: block;
+  font-size: 15px;
+  line-height: 20px;
+}
+/* line 84, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-item .m-list-item--description {
+  display: block;
+  padding: 6px 0 0;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 20px;
+}
+
+/* line 93, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-item-right {
+  position: absolute;
+  display: block;
+  right: 15px;
+  top: 19px;
+  width: 35px;
+  text-align: center;
+}
+/* line 101, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-item-right .m-list-item-right--rating {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 31px;
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 15px;
+  cursor: default;
+}
+
+/* line 110, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-item-address {
+  display: block;
+  padding: 5px 0 0;
+  font-size: 12px;
+  line-height: 20px;
+  color: #2c3e50;
+}
+/* line 117, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-item-address .m-list-item-address--street {
+  display: block;
+}
+/* line 121, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-item-address .m-list-item-address--phone {
+  display: block;
+}
+/* line 125, H:/job/projects-active/tennis/scss/list.scss */
+.m-list-item-address .m-list-item-address--station {
+  display: block;
 }

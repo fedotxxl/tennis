@@ -1,24 +1,27 @@
-<button class="m-list-filter--item is-dropdown-active" ng-class="{'is-selection': filterItem.selection}">
-    <span>{{filterItem.title}}</span>
+<button class="m-list-filter--item" ng-class="{'is-selection': filterItem.selection, 'is-checked': filterItem.checked}" ng-click="toggle()">
+    <span>{{filterItem.getTitle()}}</span>
 
-    <div class="m-dropdown">
-        <div class="m-dropdown--tail"></div>
-
-        <ul>
-            <span class="m-dropdown--radio"></span>
-            <span class="m-dropdown--text">За все время</span>
-        </ul>
-        <ul>
-            <span class="m-dropdown--radio is-checked"></span>
-            <span class="m-dropdown--text">За все время</span>
-        </ul>
-        <ul>
-            <span class="m-dropdown--radio"></span>
-            <span class="m-dropdown--text">За все время</span>
-        </ul>
-        <ul>
-            <span class="m-dropdown--checkbox is-checked"></span>
-            <span class="m-dropdown--text">За все время</span>
-        </ul>
+    <div ng-if="filterItem.selection" ng-class="{'is-dropdown-active': isDropdownActive}">
+        <p-dropdown items="filterItem.selection" multi="filterItem.multi" on-item-click="onSelectionItemClick" />
     </div>
+    <!--<div class="m-dropdown">-->
+        <!--<div class="m-dropdown--tail"></div>-->
+
+        <!--<ul>-->
+            <!--<span class="m-dropdown--radio"></span>-->
+            <!--<span class="m-dropdown--text">За все время</span>-->
+        <!--</ul>-->
+        <!--<ul>-->
+            <!--<span class="m-dropdown--radio is-checked"></span>-->
+            <!--<span class="m-dropdown--text">За все время</span>-->
+        <!--</ul>-->
+        <!--<ul>-->
+            <!--<span class="m-dropdown--radio"></span>-->
+            <!--<span class="m-dropdown--text">За все время</span>-->
+        <!--</ul>-->
+        <!--<ul>-->
+            <!--<span class="m-dropdown--checkbox is-checked"></span>-->
+            <!--<span class="m-dropdown--text">За все время</span>-->
+        <!--</ul>-->
+    <!--</div>-->
 </button>

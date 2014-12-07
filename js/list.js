@@ -1,21 +1,52 @@
 angular.module('app').
     controller('ListController', function($rootScope, $scope, $stateParams) {
+        console.log("abc");
         $rootScope.shared = {filter: $stateParams.filter, item: $stateParams.item}
     }).
-    controller('FilterController', function($scope, $rootScope) {
-        $scope.items = ["1", "2"];
-        $scope.listNow = Date.now();
+    controller('FilterController', function($scope, $rootScope, _data, _filter) {
+        var loadItems = function() {
+            $scope.loading = true;
+            _data.getList(_filter.toCheckedObject()).then(function(items) {
+                $scope.items = items;
+                $scope.loading = false;
+            });
+        };
+
+        loadItems();
 
         $rootScope.$watch('shared.filter', function (current, prev) {
                 if (current != prev) {
-                    $scope.anotherFilter = (current == 'a') ? 'b' : 'a';
+                    _filter.fromUrl(current)
                 }
             }
-        )
-    }).
-    controller('ItemController', function($scope) {
+        );
 
-        $scope.itemNow = Date.now();
+        $scope.$watch(_filter.toUrl, function (current, prev) {
+                if (current != prev) {
+                    loadItems();
+                }
+            }
+        );
+    }).
+    controller('ItemController', function($rootScope, $scope, _data) {
+        var loadItem = function() {
+            if ($rootScope.shared && $rootScope.shared.item) {
+                $scope.loading = true;
+                _data.getItem($rootScope.shared.item).then(function(item) {
+                    $scope.item = item;
+                    $scope.loading = false;
+                });
+            }
+        };
+
+        loadItem();
+
+        $rootScope.$watch('shared.item', function (current, prev) {
+                if (current != prev) {
+                    loadItem();
+                }
+            }
+        );
     }).
     config(function($stateProvider, $urlRouterProvider) {
 

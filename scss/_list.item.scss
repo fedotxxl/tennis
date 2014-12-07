@@ -1,0 +1,273 @@
+.m-item {
+  width: 50%;
+  margin-left: 50%;
+  border-left: 1px solid $color-grey-border;
+  padding: 12px 20px 20px 20px;
+}
+
+.m-item-gallery {
+
+  position: relative;
+  margin: 0 -20px 32px -20px;
+  height: 155px;
+  overflow: hidden;
+
+
+  ul {
+    @include clearfix;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9999px;
+    margin-left: -40px;
+  }
+
+  li {
+    float: left;
+    margin: 0 1px;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .m-item-gallery--item {
+    overflow: hidden;
+    width: 155px;
+    height: 155px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.m-item-details {
+  position: relative;
+
+  .m-item-details--title {
+    width: 70%;
+    font-size: 30px;
+    line-height: 35px;
+    padding: 0 0 17px;
+    cursor: default;
+    margin: -7px 0 0;
+  }
+
+  .m-item-details--row {
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  .m-item-details--type {
+    display: inline-block;
+    line-height: 25px;
+  }
+
+  .m-item-details--price {
+    display: inline-block;
+    line-height: 25px;
+    margin-left: 16px;
+  }
+
+  .m-item-details--description {
+    padding: 14px 50px 16px 0;
+    font-size: 15px;
+    line-height: 20px;
+    cursor: default;
+  }
+
+  .m-item-details--address-and-hours {
+    padding: 16px 0 24px;
+  }
+
+  .m-item-details-right--rating {
+    @include circle(76px, $color-grey, 4px);
+    @extend %item-rating;
+
+    position: absolute;
+    top: 7px;
+    right: 0;
+
+    font-size: 30px;
+  }
+}
+
+.m-item-details--tags {
+
+  padding-top: 16px;
+
+  li {
+    @extend %button;
+    display: inline-block;
+  }
+
+  .fa {
+    padding-right: 4px;
+    margin-left: -4px;
+  }
+
+  .fa-check {
+    color: $color-green;
+  }
+
+  .fa-times {
+    color: $color-red;
+    opacity: 0.4;
+  }
+}
+
+.m-item-details-address {
+  span {
+    font-size: 15px;
+    line-height: 25px;
+    cursor: default;
+  }
+
+  .m-item-details-address--street {
+    display: block;
+  }
+
+  .m-item-details-address--phone {
+    display: block;
+  }
+
+  .m-item-details-address--site {
+    display: block;
+  }
+
+  .m-item-details-address--station {
+    display: block;
+  }
+}
+
+.m-item-details-hours {
+  display: none;
+}
+
+.m-item-detailed {
+  padding-bottom: 24px;
+  display: none;
+
+  dl {
+    font-size: 15px;
+    line-height: 20px;
+    padding: 15px 15px 14px;
+    border-bottom: 1px solid #dcdcdc;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  dt {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+  }
+
+  dd {
+    display: inline-block;
+    vertical-align: top;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.m-item-reviews {
+  &.is-large {
+    margin: 0 -20px -20px -20px;
+  }
+}
+
+.m-item-reviews-header {
+  @include clearfix;
+
+  background: #eee;
+  padding: 15px 20px;
+
+  .m-item-reviews-header--count {
+    float: left;
+  }
+
+  .m-item-reviews-header--sort {
+    float: right;
+
+    ul {
+      display: inline-block;
+      padding-left: 10px;
+    }
+
+    li {
+      display: inline-block;
+
+      &:last-child {
+        &:before {
+          content: "/ ";
+        }
+      }
+    }
+  }
+}
+
+.m-item-reviews-list {
+  background: #f6f6f6;
+}
+
+.m-item-review {
+  border-top: 1px solid $color-grey-border;
+  margin: 0 20px;
+  padding: 20px 0 0;
+
+  &:first-child {
+    border-top: none;
+  }
+
+  .m-item-review--text {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.m-item-review-info {
+  line-height: 28px;
+  padding: 16px 0 20px;
+
+  %item-review-info-item {
+    line-height: 30px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .m-item-review-info--avatar {
+    @include border-radius(15px);
+    @extend %item-review-info-item;
+
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    background-clip: padding-box;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .m-item-review-info--user {
+    @extend %item-review-info-item;
+
+    margin: 0 10px;
+  }
+
+  .m-item-review-info--date {
+    @extend %item-review-info-item;
+
+    margin: 0 10px;
+  }
+}
