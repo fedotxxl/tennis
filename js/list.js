@@ -15,8 +15,6 @@ angular.module('app').
             }, true);
     }).
     controller('FilterController', function($scope, _data, _filter) {
-        var lastFilterUrl = null;
-
         var loadItems = function() {
             $scope.loading = true;
             _data.getList($scope.shared.filter).then(function(items) {
