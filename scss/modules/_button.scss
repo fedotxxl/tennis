@@ -28,6 +28,12 @@
     color: #B4B4B4;
   }
 
+  &:active {
+    &:before {
+      background: #F6F5F3;
+    }
+  }
+
   > span {
     display: block;
     padding: 0 13px;

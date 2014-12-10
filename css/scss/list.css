@@ -51,14 +51,18 @@
 .m-item-details--tags li.is-inactive, .m-list-filter .is-inactive.m-list-filter--item {
   color: #B4B4B4;
 }
-/* line 31, H:/job/projects-active/tennis/scss/modules/_button.scss */
+/* line 32, H:/job/projects-active/tennis/scss/modules/_button.scss */
+.m-item-details--tags li:active:before, .m-list-filter .m-list-filter--item:active:before {
+  background: #F6F5F3;
+}
+/* line 37, H:/job/projects-active/tennis/scss/modules/_button.scss */
 .m-item-details--tags li > span, .m-list-filter .m-list-filter--item > span {
   display: block;
   padding: 0 13px;
   position: relative;
 }
 
-/* line 48, H:/job/projects-active/tennis/scss/modules/_button.scss */
+/* line 54, H:/job/projects-active/tennis/scss/modules/_button.scss */
 .m-list-filter .m-list-filter--item.is-selection:after {
   top: 50%;
   width: 11px;
@@ -71,7 +75,7 @@
   content: '';
   background: url("/img/arrow.svg") 0 0 no-repeat;
 }
-/* line 63, H:/job/projects-active/tennis/scss/modules/_button.scss */
+/* line 69, H:/job/projects-active/tennis/scss/modules/_button.scss */
 .m-list-filter .m-list-filter--item.is-selection > span {
   padding-right: 28px;
 }
