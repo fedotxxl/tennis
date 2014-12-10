@@ -3,7 +3,7 @@
 
     <ul>
         <li ng-repeat="item in items" ng-click="toggle($event, item)">
-            <span ng-class="{'is-checked': item.checked, 'm-dropdown--radio': !multi, 'm-dropdown--checkbox': multi}"></span>
+            <span ng-class="{'is-checked': isChecked(item), 'm-dropdown--radio': !multi, 'm-dropdown--checkbox': multi}"></span>
             <span class="m-dropdown--text">{{item.title}}</span>
         </li>
     </ul>

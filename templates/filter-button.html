@@ -1,8 +1,8 @@
-<button class="m-list-filter--item" ng-class="{'is-selection': filterItem.selection, 'is-checked': filterItem.checked}" ng-click="toggle()">
-    <span>{{filterItem.getTitle()}}</span>
+<button class="m-list-filter--item" ng-class="{'is-selection': filter.selection, 'is-checked': isChecked()}" ng-click="toggle()">
+    <span>{{filter.getTitle()}}</span>
 
-    <div ng-if="filterItem.selection" ng-class="{'is-dropdown-active': isDropdownActive}">
-        <p-dropdown items="filterItem.selection" multi="filterItem.multi" on-item-click="onSelectionItemClick" />
+    <div ng-if="filter.selection" ng-class="{'is-dropdown-active': isDropdownActive}">
+        <p-dropdown items="filter.selection" multi="filter.multi" model="model" key="filter.key" on-item-click="onSelectionItemClick" />
     </div>
     <!--<div class="m-dropdown">-->
         <!--<div class="m-dropdown--tail"></div>-->

@@ -2,6 +2,8 @@ angular.module("app").
     factory("_data", function($timeout) {
 
         var getList = function(filter) {
+            console.log("Loading list", filter);
+
             return $timeout(function() {
                 var now = Date.now();
 
@@ -14,6 +16,8 @@ angular.module("app").
         };
 
         var getItem = function(id) {
+            console.log("Loading item", id);
+
             return $timeout(function() {
                 return Date.now();
             }, 4000);

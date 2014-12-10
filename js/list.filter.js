@@ -41,49 +41,12 @@ angular.module("app")
             })
         };
 
-        var toUrl = function() {
-            var answer = "";
-
-            _.each(items, function(item) {
-                answer += item.toUrl();
-            });
-
-            return answer;
-        };
-
-        var fromUrl = function() {
-            console.log("loading from url")
-        };
-
-        var toCheckedObject = function() {
-            var answer = {};
-
-            _.each(items, function(item) {
-                var value = null;
-
-                if (item.selection) {
-                    value = item.getChecked();
-                } else if (item.checked) {
-                    value = true;
-                }
-
-                if (value) {
-                    answer[item.key] = value;
-                }
-            });
-
-            return answer;
-        };
-
         addPossibleItem("Цена", "price", [{key: '1', title: "x"}, {key: "2", title: "xx"}, {key: "3", title: "xxx"}], true);
-//        addPossibleItem("Рейтинг", "rating", ["1", "2", "3"]);
+        addPossibleItem("Рейтинг", "rating", [{key: "1", title: "От 1"}, {key: "2", title: "От 2"}, {key: "3", title: "От 3"}]);
         addPossibleItem("Парковка", "parking");
-//        addPossibleItem("Кредитные карты", "credit");
+        addPossibleItem("Кредитные карты", "credit");
 
         return {
-            toUrl: toUrl,
-            fromUrl: fromUrl,
-            toCheckedObject: toCheckedObject,
             getPossibleItems: function() {
                 return items;
             }
@@ -93,9 +56,20 @@ angular.module("app")
         return {
             restrict: 'E',
             replace: true,
-            template: '<p-filter-button filter-item="filterItem" ng-repeat="filterItem in filterItems"/>',
+            scope: {
+                filterModel: "="
+            },
+            template: '<p-filter-button filter="filterAndModel.filter" model="filterAndModel.model" ng-repeat="filterAndModel in filterAndModelItems"/>',
             link: function (scope, element, attrs) {
-                scope.filterItems = _filter.getPossibleItems()
+                scope.filterAndModelItems = _.map(_filter.getPossibleItems(), function(filterItem) {
+                    return {
+                        filter: filterItem,
+                        model: scope.filterModel
+                    }
+                });
+
+
+                scope.filterItems = _filter.getPossibleItems();
             }
         }
     })
@@ -105,21 +79,35 @@ angular.module("app")
             replace: true,
             templateUrl: '/templates/filter-button.html',
             scope: {
-                filterItem: '='
+                filter: '=',
+                model: "="
             },
             link: function (scope, element, attrs) {
-                var filterItem = scope.filterItem;
+                var filterItem = scope.filter;
+                var model = scope.model;
+
+                var getValues = function() {
+                    return model[filterItem.key];
+                };
+
+                var setValues = function(values) {
+                    model[filterItem.key] = values;
+                };
+
+                scope.isChecked = function() {
+                    return !filterItem.selection && getValues();
+                };
 
                 scope.toggle = function() {
                     if (filterItem.selection) {
                         scope.isDropdownActive = !scope.isDropdownActive;
                     } else {
-                        filterItem.checked = !filterItem.checked;
+                        setValues(!getValues());
                     }
                 };
 
-                scope.onSelectionItemClick = function(item) {
-                    if (!scope.filterItem.multi && item.checked) {
+                scope.onSelectionItemClick = function(item, isActive, multi) {
+                    if (!multi && isActive) {
                         scope.isDropdownActive = false;
                     }
                 };
