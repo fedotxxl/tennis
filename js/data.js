@@ -6,10 +6,17 @@ angular.module("app").
             return _latestPromise("getItems", $timeout(function() {
                 var now = Date.now();
 
+                var getItem = function(id) {
+                    return {
+                        id: id,
+                        title: id + " list"
+                    }
+                };
+
                 return [
-                    now + 1,
-                    now + 2,
-                    now + 3
+                    getItem(now + 1),
+                    getItem(now + 2),
+                    getItem(now + 3)
                 ]
             }, 4000));
         };
@@ -18,7 +25,11 @@ angular.module("app").
             console.log("Loading item", id);
 
             return _latestPromise("getItem", $timeout(function() {
-                return Date.now();
+                return {
+                    id: id,
+                    title: id + " item",
+                    img: "a.jpg"
+                }
             }, 4000));
         };
 

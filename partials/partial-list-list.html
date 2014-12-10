@@ -9,9 +9,7 @@
 
     <ul class="m-list-items" ng-hide="loading">
         <li class="m-list-item" ng-repeat="item in items">
-            <a ui-sref="list({ filter: shared.filter, item:item })">{{item}}</a>
+            <a ng-click="setItem(item)" ng-href="{{modelToUrl({item: item.id})}}">{{item.title}}</a>
         </li>
     </ul>
-
-    <a ui-sref="list({ filter: anotherFilter, item: shared.item })">another filter</a>
 </div>

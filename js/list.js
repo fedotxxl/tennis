@@ -13,6 +13,16 @@ angular.module('app').
                     item: current.item
                 }))
             }, true);
+
+        $scope.setItem = function(item) {
+            $scope.shared.item = item.id;
+        };
+
+        $scope.modelToUrl = function(changes) {
+            var obj = $.extend({}, $scope.shared, changes);
+
+            return $.vObjectToUrl(obj);
+        };
     }).
     controller('FilterController', function($scope, _data, _filter) {
         var loadItems = function() {
@@ -27,11 +37,11 @@ angular.module('app').
             loadItems();
         }, true);
     }).
-    controller('ItemController', function($rootScope, $scope, _data) {
+    controller('ItemController', function($scope, _data) {
         var loadItem = function() {
-            if ($rootScope.shared.item) {
+            if ($scope.shared.item) {
                 $scope.loading = true;
-                _data.getItem($rootScope.shared.item).then(function(item) {
+                _data.getItem($scope.shared.item).then(function(item) {
                     $scope.item = item;
                     $scope.loading = false;
                 });

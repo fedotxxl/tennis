@@ -1,3 +1,9 @@
 <div class="m-item">
-    {{item}} {{itemNow}}
+    <div ng-show="loading" class="ng-cloak">
+        Loading...
+    </div>
+
+    <div class="m-list-items" ng-hide="loading">
+        {{item.title}}
+    </div>
 </div>
