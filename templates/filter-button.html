@@ -1,4 +1,4 @@
-<button class="m-list-filter--item" ng-class="{'is-selection': filter.selection, 'is-checked': isChecked()}" ng-click="toggle()">
+<button class="m-list-filter--item" ng-class="{'is-selection': filter.selection, 'is-checked': isChecked()}" ng-click="toggle()" p-on-click-outside="hideDropdown">
     <span>{{filter.getTitle()}}</span>
 
     <div ng-if="filter.selection" ng-class="{'is-dropdown-active': isDropdownActive}">

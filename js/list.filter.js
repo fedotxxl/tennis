@@ -106,6 +106,10 @@ angular.module("app")
                     }
                 };
 
+                scope.hideDropdown = function() {
+                    scope.isDropdownActive = false;
+                };
+
                 scope.onSelectionItemClick = function(item, isActive, multi) {
                     if (!multi && isActive) {
                         scope.isDropdownActive = false;
