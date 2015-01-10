@@ -1,0 +1,51 @@
+@import "../mixins/all";
+
+.is-date-column {
+  width: 150px;
+}
+
+.m-admin-orders {
+  .m-admin-orders--answer {
+    td {
+      border-top: none;
+      position: relative;
+    }
+  }
+
+  .m-admin-orders--buttons {
+    margin-right: 20px;
+
+    button {
+      height: 34px;
+      font-size: 14px;
+    }
+  }
+
+  .m-admin-orders--locations {
+    .select2-choices {
+      min-width: 190px;
+    }
+  }
+}
+
+.m-admin-orders--submitting {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  .is-submitting & {
+    display: block;
+  }
+}
+
+.m-admin-orders-read {
+  .m-admin-orders-read--comment {
+    margin-top: 10px;
+  }
+}

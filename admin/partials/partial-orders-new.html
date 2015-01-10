@@ -1,0 +1,57 @@
+<div class="table-responsive m-admin-orders">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="is-date-column">Добавлено</th>
+                <th class="is-date-column">На дату</th>
+                <th></th>
+                <th>Комментарий</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat-start="order in orders">
+                <td>{{order.created | date: 'short'}}</td>
+                <td>{{order.date | date: 'short'}}</td>
+                <td>
+                    <span ng-if="order.persons > 1">{{order.persons}} <i class="fa fa-users"></i></span>
+                    <span ng-if="order.persons == 1">{{order.persons}} <i class="fa fa-user"></i></span>
+                </td>
+                <td>{{order.comment}}</td>
+            </tr>
+            <tr ng-repeat-end class="m-admin-orders--answer" ng-class="{'is-submitting': order.submitting}">
+                <td colspan="4">
+                    <div class="m-admin-orders--submitting"></div>
+                    <div ng-if="!order.action">
+                        <div class="form-group">
+                            <span class="m-admin-orders--buttons">
+                                <button type="button" class="btn btn-sm btn-success" ng-click="approve(order)">{{actionMessage(order, 'approve')}}</button>
+                                <button type="button" class="btn btn-sm btn-info" ng-click="approvePartially(order)">{{actionMessage(order, 'approve.partially')}}</button>
+                                <button type="button" class="btn btn-sm btn-danger" ng-click="reject(order)">{{actionMessage(order, 'reject')}}</button>
+                            </span>
+
+                            <span ng-if="user.locations.length > 1" class="m-admin-orders--locations">
+                                <select multiple ui-select2 ng-model="order.answer.locations" data-placeholder="Выберите расположение">
+                                    <option ng-repeat="location in user.locations" value="{{location.id}}">{{location.label}}</option>
+                                </select>
+                            </span>
+
+                            <span ng-if="user.locations.length == 1" class="m-admin-orders--location">{{user.locations[0].label}}</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Комментарий</label>
+                            <textarea class="form-control" rows="3" ng-model="order.answer.comment"></textarea>
+                        </div>
+                    </div>
+                    <div ng-if="order.action" class="m-admin-orders-read">
+                        <button type="button" disabled class="btn btn-xs {{getActionButtonClass(order.action)}}">{{actionMessageByType(order.action)}}</button>
+                        <span class="m-admin-orders-read--location" ng-show="order.answer.locations">{{getLocationLabels(order.answer.locations)}}</span>
+
+                        <div class="m-admin-orders-read--comment" ng-show="order.answer.comment">
+                            <p><label>Комментарий:</label> {{order.answer.comment}}</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

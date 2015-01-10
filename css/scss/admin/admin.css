@@ -1,0 +1,44 @@
+/* line 3, H:/job/projects-active/tennis/scss/admin/admin.scss */
+.is-date-column {
+  width: 150px;
+}
+
+/* line 9, H:/job/projects-active/tennis/scss/admin/admin.scss */
+.m-admin-orders .m-admin-orders--answer td {
+  border-top: none;
+  position: relative;
+}
+/* line 15, H:/job/projects-active/tennis/scss/admin/admin.scss */
+.m-admin-orders .m-admin-orders--buttons {
+  margin-right: 20px;
+}
+/* line 18, H:/job/projects-active/tennis/scss/admin/admin.scss */
+.m-admin-orders .m-admin-orders--buttons button {
+  height: 34px;
+  font-size: 14px;
+}
+/* line 25, H:/job/projects-active/tennis/scss/admin/admin.scss */
+.m-admin-orders .m-admin-orders--locations .select2-choices {
+  min-width: 190px;
+}
+
+/* line 31, H:/job/projects-active/tennis/scss/admin/admin.scss */
+.m-admin-orders--submitting {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.4);
+}
+/* line 42, H:/job/projects-active/tennis/scss/admin/admin.scss */
+.is-submitting .m-admin-orders--submitting {
+  display: block;
+}
+
+/* line 48, H:/job/projects-active/tennis/scss/admin/admin.scss */
+.m-admin-orders-read .m-admin-orders-read--comment {
+  margin-top: 10px;
+}
