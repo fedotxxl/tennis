@@ -25,6 +25,12 @@
     .select2-choices {
       min-width: 190px;
     }
+
+    &.has-error {
+      .select2-choices {
+        border-color: #a94442;
+      }
+    }
   }
 }
 

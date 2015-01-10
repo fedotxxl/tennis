@@ -29,7 +29,7 @@
                                 <button type="button" class="btn btn-sm btn-danger" ng-click="reject(order)">{{actionMessage(order, 'reject')}}</button>
                             </span>
 
-                            <span ng-if="user.locations.length > 1" class="m-admin-orders--locations">
+                            <span ng-if="user.locations.length > 1" class="m-admin-orders--locations" ng-class="{'has-error': hasLocationError(order)}">
                                 <select multiple ui-select2 ng-model="order.answer.locations" data-placeholder="Выберите расположение">
                                     <option ng-repeat="location in user.locations" value="{{location.id}}">{{location.label}}</option>
                                 </select>
@@ -37,7 +37,7 @@
 
                             <span ng-if="user.locations.length == 1" class="m-admin-orders--location">{{user.locations[0].label}}</span>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" ng-class="{'has-error': hasCommentError(order)}">
                             <label>Комментарий</label>
                             <textarea class="form-control" rows="3" ng-model="order.answer.comment"></textarea>
                         </div>

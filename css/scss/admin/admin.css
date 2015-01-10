@@ -21,8 +21,12 @@
 .m-admin-orders .m-admin-orders--locations .select2-choices {
   min-width: 190px;
 }
+/* line 30, H:/job/projects-active/tennis/scss/admin/admin.scss */
+.m-admin-orders .m-admin-orders--locations.has-error .select2-choices {
+  border-color: #a94442;
+}
 
-/* line 31, H:/job/projects-active/tennis/scss/admin/admin.scss */
+/* line 37, H:/job/projects-active/tennis/scss/admin/admin.scss */
 .m-admin-orders--submitting {
   display: none;
   position: absolute;
@@ -33,12 +37,12 @@
   z-index: 999;
   background: rgba(0, 0, 0, 0.4);
 }
-/* line 42, H:/job/projects-active/tennis/scss/admin/admin.scss */
+/* line 48, H:/job/projects-active/tennis/scss/admin/admin.scss */
 .is-submitting .m-admin-orders--submitting {
   display: block;
 }
 
-/* line 48, H:/job/projects-active/tennis/scss/admin/admin.scss */
+/* line 54, H:/job/projects-active/tennis/scss/admin/admin.scss */
 .m-admin-orders-read .m-admin-orders-read--comment {
   margin-top: 10px;
 }
